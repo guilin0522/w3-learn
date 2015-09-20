@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+    现在时间是：
+    <h1></h1>
+    <script>
+        var h1 = document.querySelector('h1');
+
+        function getFormatDateString() {
+            var date = new Date();
+            return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        }
+
+        setInterval(function () {
+            h1.textContent = getFormatDateString();
+        }, 1000);
+    </script>
+</body>
+</html>
