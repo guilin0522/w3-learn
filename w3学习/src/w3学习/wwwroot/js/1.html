@@ -5,7 +5,16 @@
     <title></title>
 </head>
 <body>
-    <p id="demo"></p>
+    <p id="demo">JavaScript能改变HTML中的内容</p>
+     
+    <script>
+        function myFunction()
+        {
+            x = document.getElementById("demo")
+            x.innerHTML="hello world!"
+        }
+    </script>
+    <button type="button" onclick="myFunction()">点击这里</button>
 
 </body>
 </html>
