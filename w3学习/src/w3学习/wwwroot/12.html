@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>跳转到其他网页</title>
+    <script>
+        function changeURL() {
+            var newURL = document.getElementById('newURL').value;
+            self.loction.href = newURL;
+        }
+    </script>
+</head>
+<body style="text-align:center">
+    
+    <input type="text" name="newURL" id="newURL" value="" />
+    <input type="button" value="跳转地址" onclick="changeURL" />
+       
+</body>
+</html>
