@@ -9,17 +9,18 @@
             willClose = false;
 
         }
-        setInterval(function(){
-            if(willClose){
+        setInterval(function () {
+            if (willClose) {
                 window.close();
             }
-            else{
-                willClose=true;
+            else {
+                willClose = true;
             }
-        },10000)
+        }, 10000);
     </script>
 </head>
-<body>
+<body style="text-align:center" onclick="clickBody()">
+    如果用户10秒钟不单击网页，本窗口将自动关闭
 
 </body>
 </html>
