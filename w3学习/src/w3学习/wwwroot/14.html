@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>将网站设置为首页</title>
+    <script type="text/javascript">
+        function setMyHomePage() {
+            if (document.all) {
+                document.body.style.behavior = 'url(#default#homepage)';
+                document.body.setHomePage('http://wwww.myhomepage.com');
+            } else if (window.sidebar) {
+                var thePrefs = Components.classes['@mozilla.org/preences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                thePrefs.setChaPref('browser.startup.homepage', 'http//:www.myhomepage.com');
+            }
+        }
+
+    </script>
+</head>
+<body style="text-align:center">
+    <p><a href="#" onclick="setMyHomePage()">设为首页</a></p>
+
+</body>
+</html>
