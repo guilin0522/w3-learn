@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>窗口打开时定时显示大广告图片及其自动关闭</title>
+    <script type="text/javascript">
+        function addshow() {
+            var add = document.getElementById("ad");
+            add.innerHTML = '<img sct="image\ab.jpg" width="300" height="200"/>';
+            setTimeout(function () {
+                var add = document.getElementById("aa");
+                add.style.display = "none";
+            }, 5000);
+        }
+        window.onload = addshow;
+
+    </script>
+</head>
+<body style="text-align:center">
+    <p>
+        页面内容上部
+    </p>
+    <p id="ad"></p>
+    <p>
+        页面内容下部
+    </p>
+</body>
+</html>
