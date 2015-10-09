@@ -5,11 +5,11 @@
     <title>窗口打开时定时显示大广告图片及其自动关闭</title>
     <script type="text/javascript">
         function addshow() {
-            var add = document.getElementById("ad");
-            add.innerHTML = '<img sct="image\miaomi.jpg" width="300" height="200"/>';
+            var ad = document.getElementById("ad");
+            ad.innerHTML = '<img sct="image\miaomi.jpg" width="300" height="200"/>';
             setTimeout(function () {
-                var add = document.getElementById("ad");
-                add.style.display = "none";
+                var ad = document.getElementById("ad");
+                ad.style.display = "none";
             }, 5000);
         }
         window.onload = addshow;
