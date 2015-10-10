@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>通过id获取一个特定的DOM元素</title>
+    <script type="text/javascript">
+        function getDomText() {
+            var mylink = document.getElementById("mylink");
+            var myspan = document.getElementById("myspan");
+            var str = "";
+            str += mylink.innerHTML;
+            str += myspan.innerHTML;
+            alert("两个DOM的内容是：" + str);
+        }
+    </script>
+</head>
+<body style="text-align:center">
+    <p>
+        <a id="mylink" href="http://www.baidu.com">链接</a>
+        <span id="myspan">文字</span>
+        <br />
+        <input type="button" value="获取" onclick="getDomText();" />
+
+    </p>
+</body>
+</html>
