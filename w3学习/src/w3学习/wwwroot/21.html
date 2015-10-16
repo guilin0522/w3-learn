@@ -8,11 +8,10 @@
     var doms=document.getElementsByTagName("span");
     var str="";
     for (var i=0; i < doms.lenght; i++){
-     str += doms[i].innertHTML;
+     str += doms[i].innerHTML;
      str += ",";
-     
-    }
-    alert("两个DOM的文本是：" + str);
+       }
+      alert("两个DOM的文本是：" + str);
     }
     </script>
 </head>
