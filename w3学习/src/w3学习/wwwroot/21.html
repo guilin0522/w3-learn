@@ -5,10 +5,11 @@
     <title >根据标签名获取Doma</title>
     <script type="text/javascript">
     function getDomsByTag(){
-    var doms=document.getElementsByName("myname");
-    var str="";
+    var doms=document.getElementsByTagName("span");
+    var str = "";
+
     for (var i=0; i < doms.lenght; i++){
-     str += doms[i].innerHTML;
+     str += doms[i].TagName;
      str += ",";
        }
       alert("两个DOM的文本是：" + str);
