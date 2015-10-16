@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>创建新元素</title>
+    <script type="text/javascript">
+        function createNewElenmets() {
+            var p1 = document.getElementById("p1");
+            p1.innerHTML = "<span>我的文本1</span>";
+            var span = document.creaetElement("span");
+            span.appendChild(document.createTextNode("我的文本2"));
+            var p2 = document.getElementById("p2");
+            p2.appendChild(span);
+        }
+    </script>
+</head>
+<body style="text-align:center">
+    <p>
+        <input type="button" value="创建新元素" onclick="createNewElenmets();" />
+    </p>
+        <p id="p1"></p>
+        <p id="p2"></P>
+   
+</body>
+</html>
