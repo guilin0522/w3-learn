@@ -5,7 +5,7 @@
     <title >根据标签名获取Doma</title>
     <script type="text/javascript">
     function getDomsByTag(){
-    var doms=document.getElementsByTagName("span");
+    var doms=document.getElementsByName("myname");
     var str="";
     for (var i=0; i < doms.lenght; i++){
      str += doms[i].innerHTML;
@@ -17,7 +17,7 @@
 </head>
 <body style="text-align:center">
     <p>
-        <span>文字一</span>
+        <span name="myname">文字一</span>
         <span>文字二</span>
         <br />
         <input type="button" value="获取" onclick="getDomsByTag();" />
