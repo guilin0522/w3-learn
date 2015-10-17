@@ -7,15 +7,19 @@
         function cloneimag() {
             var myimag = document.getElementById("myimag");
             var newimag = myimag.cloneNode(true);
-            var mycontent = document.getElementById("mycontent");
-            mycontent.appendChild(newimag);
+          
+            var mycontent = document.getElementById("mycontent") ;
+            mycontent.appendChild(newimag) ;
+           
         }
     </script>
 </head>
 <body style="text-align:center">
     <p id="mycontent">
-        <input type="button" value="克隆" onclick="cloneimag();" />
-        <img id="myimag" src="image/miaomi.jpg" width="200" height="300"/>
+        <input type="button" value="克隆" onclick="cloneimag() ;" />
+        <br/>
+        <br/>
+        <img id="myimag" src="image/miaomi.jpg" width="200" height="300" />
     </p>
 </body>
 </html>
