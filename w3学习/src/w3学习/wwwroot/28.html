@@ -8,7 +8,7 @@
             var p = btn.parentNode;
             var children = p.childNodes;
             for (var i = 0; i < children.length; i++) {
-                if (childrenp[i] != btn && children[i].nodeType == btn.nodeType) {
+                if (children[i] != btn && children[i].nodeType == btn.nodeType) {
                     alert(children[i].value);
                 }
             }
