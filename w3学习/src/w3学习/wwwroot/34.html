@@ -7,6 +7,7 @@
         function modifvalue() {
             var f = document.forms[0];
             var elements = f.elements;
+            var myText=document.getElementById("myText")
             for (var i = 0; i < elements.length; i++) {
                 var e = elements[i];
                 if (e.tagName == 'INPUT' && e.type == 'button') {}
@@ -19,7 +20,7 @@
 </head>
 <body style="text-align:center">
     <form>
-        文本框：<input type="text" name="myText" />
+        文本框：<input type="text" name="myText" id="myText" />
         下拉列表：
         <select>
             <option value="">==请选择==</option>
