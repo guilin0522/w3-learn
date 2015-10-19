@@ -6,10 +6,10 @@
     <script type="text/javascript">
         function getform() {
             var f = document.forms[0];
-            var element = f.elements;
+            var elements = f.elements;
             var str = "";
-            for (var i = 0; i < element.length; i++) {
-                var e = element[i];
+            for (var i = 0; i < elements.length; i++) {
+                var e = elements[i];
                 str += e.value;
                 str += "\n";
             }
@@ -20,8 +20,8 @@
 <body style="text-align:center">
     <form>
         文本框：<input type="text" name="mytext" />
-        单选框：<input type="radio" name="mytext" value="1" />
-        <input type="radio" name="mytext" value="2" />
+        单选框：<input type="radio" name="myradio" value="1" />
+        <input type="radio" name="myradio" value="2" />
         <br />
         下拉列表：
         <select>
