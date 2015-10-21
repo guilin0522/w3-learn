@@ -12,11 +12,15 @@
             var frameSet = top.document.getElementById("left_right");
             frameSet.cols = "100,*";
         }
+        function flashIt() {
+            window.location.reload();
+        }
     </script>
 </head>
 <body>
     <h2>右边frame</h2>
     <input type="button" value="变窄" onclick="lessWidth();" />
     <input type="button" value="变宽" onclick="moreWidth();" />
+    <input type="button" value="刷新" onclick="flashIt();" />
 </body>
 </html>
