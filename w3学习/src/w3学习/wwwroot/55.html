@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>禁用鼠标右键</title>
+    <script type="text/javascript">
+        document.onmousedown = function (event) {
+            if (event.button == 2) {
+                alert("禁用鼠标右键");
+            }
+        }
+    </script>
+</head>
+<body style="text-align:center">
+    <h2>禁用鼠标右键</h2>
+</body>
+</html>
