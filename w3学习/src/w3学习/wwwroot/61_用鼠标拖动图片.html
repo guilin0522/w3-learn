@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>用鼠标拖动图片</title>
+    <script language="javascript" type="text/javascript">
+        function dragPic(e) {
+            var e = e || window.event;
+            var myelement = e.srcElement || e.target;
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false;
+            }
+            var myPic = document.getElementById('mypic');
+            myPic['draging'] = true;
+            var relLeft = e.clientX - parseInt(myelement.style.left);
+            var relTop = e.clientY - parseInt(myelement.style.top);
+            myelement.onmouseup = function () {
+                myPic['draging'] = false;
+            }
+            document.onmousemove = function (eMove) {
+                var eMove = eMove || window.event;
+                if (myPic['draging'] == true) {
+                    myelement.style.left = eMove.clientX - relLeft + "px";
+                    myelement.style.top = eMove.clientY - relTop + "px";
+                    return false;
+                }
+            }
+        }
+        window.onload = function () {
+            var myPic = document.getElementById("mypic");
+            myPic['draging'] = false;
+            if (navigator.userAgent.indexOf("MSIE") > 0) {
+                myPic.attachEvent('onmousedown', dragPic);
+            } else {
+                myPic.addEventListener('mousedown', dragPic.false);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img id="mypic" style="left:10px;top:10px; position:absolute"src="image/miaomi.jpg" />
+</body>
+</html>
