@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>改变按钮的颜色</title>
+    <script type="text/javascript">
+        function defineBtn() {
+            var myBtn = document.getElementsByName('myBtn');
+            for (var i = 0; i < myBtn.length; i++) {
+                myBtn[i].onmouseover = function () {
+                    this.style.background = 'red';
+                }
+            }
+            for (var i = 0; i < myBtn.length; i++) {
+                myBtn[i].onmouseout = function () {
+                    this.style.background = '';
+                }
+            }
+        }
+    </script>
+</head>
+<body onload="defineBtn()" style="text-align:center">
+    <input name="myBtn" type="button" value="按钮一" />
+    <input name="myBtn" type="button" value="按钮二" />
+    <input name="myBtn" type="button" value="按钮三" />
+    <input name="myBtn" type="button" value="按钮四" />
+</body>
+</html>
