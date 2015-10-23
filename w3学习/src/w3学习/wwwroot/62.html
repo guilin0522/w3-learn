@@ -17,12 +17,34 @@
                 }
             }
         }
+        function submitForm(btn) {
+            var btnId = btn.in;
+            var f = document.forms[0];
+            if (btnId == 'myBtn1') {
+                window.open = '1.html';
+            } else if (btnId == 'myBtn2') {
+                window.open = '2.html';
+            }
+            else if (btnId == 'myBtn3') {
+                window.open = '3.html';
+            } else if (btnId == 'myBtn4') {
+                window.open = '4.html';
+            }
+            f.submit();
+        }
     </script>
 </head>
 <body onload="defineBtn()" style="text-align:center">
-    <input name="myBtn" type="button" value="按钮一" />
-    <input name="myBtn" type="button" value="按钮二" />
-    <input name="myBtn" type="button" value="按钮三" />
-    <input name="myBtn" type="button" value="按钮四" />
+    <form action="" method="post" style="display:block; width:200px;height:200px;border:1px solid black;">
+        <br /><br /><br /><br />
+        <input name="myBtn" type="button" value="按钮一" id="myBtn1"  onclick="submitForm(this)"/>
+        <br />
+        <input name="myBtn" type="button" value="按钮二" id="myBtn2" onclick="submitForm(this)" />
+        <br />
+        <input name="myBtn" type="button" value="按钮三" id="myBtn3" onclick="submitForm(this)" />
+        <br />
+        <input name="myBtn" type="button" value="按钮四" id="myBtn4" onclick="submitForm(this)" />
+    </form>
+    
 </body>
 </html>
