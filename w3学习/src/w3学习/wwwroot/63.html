@@ -4,12 +4,17 @@
     <meta charset="utf-8" />
     <title>Enter键提交表单</title>
     <script type="text/javascript">
-        function formKeyPress(event) {
+       /* function formKeyPress(event) {
             if (even.keyCode == 13) {
                 document.forms[0].submit();
             } else {
                 return false;
             }
+        }*/
+        //onkeypress="formKeyPress();"
+        function submitForm() {
+            document.getElementById("myBtn").disabled = true;
+            document.forms[0].submit();
         }
     </script>
 </head>
@@ -17,8 +22,9 @@
     <form action="" method="post" style="display:block; width:250px;height:200px;border:1px solid black;">
         <br />
         用户名：<input type="text" name="username" /><br />
-        密码：<input type="password" name="password" onkeypress="formKeyPress();" /><br />
-        <input type="submit" value="提交" /><br />
+        密码：<input type="password" name="password" /><br />
+        
+        <input type="button" value="提交" onclick="submitForm();" id="myBtn" /><br />
     </form>
 </body>
 </html>
