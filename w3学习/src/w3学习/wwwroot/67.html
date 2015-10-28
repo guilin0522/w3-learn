@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>让所有的链接在新窗口打开</title>
+    <script type="text/javascript">
+        function modifyopentype() {
+            var mylink = document.getElementsByTagName('a');
+            for (var i = 0; i < mylink.length; i++) {
+                var link = mylink[i];
+                link.target = '_blank';
+            }
+        }
+    </script>
+</head>
+<body style="text-align:center" onload="modifyopentype();">
+    <a href="http://baidu.com">链接一</a><br /><br />
+    <a href="http://taobao.com">链接二</a>
+</body>
+</html>
