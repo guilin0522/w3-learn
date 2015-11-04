@@ -2,23 +2,18 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>让网页后退或前进</title>
+    <title>页面的前进和后退</title>
     <script type="text/javascript">
-        function goforward() {
+        function goForward() {
             window.history.forward();
-
         }
-        function goback() {
-            window.history.backD()
+        function goBack() {
+            window.history.back();
         }
     </script>
 </head>
 <body style="text-align:center">
-    <p>
-        <!--定义前进和后退的按钮-->
-        <input type="button" value="前进" onclick="goforward()" />
-        <input type="button" value="后退" onclick="goback()" />
-            
-    </p>
+    <input type="button" value="前进" onclick="goForward();" />
+    <input type="button" value="后退" onclick="goBack();" />
 </body>
 </html>
