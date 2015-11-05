@@ -5,8 +5,8 @@
     <title>带关闭按钮的右下角图片广告</title>
     <script type="text/javascript">
         function posRightCorner() {
-            ad.style.top = document.body.scrollTop + document.body.clientHeight - 120;
-            ad.style.left = document.body.scrollLeft + document.body.clientWidth - 200;
+            ad.style.top =  document.body.clientHeight - 120;
+            ad.style.left =  document.body.clientWidth - 200;
             setTimeout("posRightCorner();", 100);
         }
         function closeAD() {
