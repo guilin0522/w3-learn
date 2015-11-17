@@ -34,6 +34,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{601C00F2-43DE-4E00-B6E4-1196A1A2C7BD} = {D04B2CEC-987B-4450-A3FF-D4C2545C4D16}
+		{9724FF01-237B-4B6F-AD74-E82ACA58EBCE} = {D04B2CEC-987B-4450-A3FF-D4C2545C4D16}
 	EndGlobalSection
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 2
