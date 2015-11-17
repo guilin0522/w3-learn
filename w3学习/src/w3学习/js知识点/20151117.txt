@@ -1,0 +1,101 @@
+
+
+可以这样定义一个对象：var x = {id: 3}
+也可以定义对象的数组：var x = [{id: 1}, {id: 2}, {id: 3}]
+也可以定义复杂对象的数组：var x = [{id: 1, name: 'one'}, {id: 2, name: 'two'}, {id: 3, name: 'three'}]
+
+
+
+数组push，可以向数组尾部添加一条数据：
+x = [1,2,3];
+x.push(4);
+x 就是 [1,2,3,4]
+
+
+
+
+四个console.XXX:
+console.log
+console.info
+console.warn
+console.error
+
+
+
+
+三种定义函数方法：
+1、传统：
+function add(a, b) { return a+b; }
+2、类似于变量的方法：
+var add = function(a, b) { return a+b; }
+3、lambda表达式：
+var add = (a, b) => a+b;
+4、lambda表达式复杂版：
+var add = (a, b) => { return a+b };
+var xxx = (a, b) => { console.log(a+b); console.log(a*b); }
+
+
+
+
+转换lambda表达式，分四步走：
+先看例子：
+var to_odds = function(arr) { return arr.filter(x => x % 2 == 1); }
+var to_odds = (arr) => { return arr.filter(x => x % 2 == 1); }
+var to_odds = (arr) => arr.filter(x => x % 2 == 1);
+var to_odds = arr => arr.filter(x => x % 2 == 1);
+1、写出原函数
+2、将functino删除，变为参数后面的=>（其实有这一句，就可以了，后面的都是可选）
+3、如果后面的非常简单，可以将花括号和return都删除；
+4、如果只有一个参数，则参数的括号可以省略（如果0个，或者2个/2个以上，就不能省略）
+
+
+
+
+js中的数字过滤（非常有用，使用率非常普遍）：
+过滤传统的方法（不推荐，很复杂）：
+var to_odds = arr => { 
+    var result = []; 
+    for (var i = 0; i < arr.length; ++i)
+        if (arr[i] % 2 == 1) 
+            result.push(arr[i]); 
+    return result; 
+}
+to_odds([1,1,1,2,3]);
+
+ES2015的方法（推荐，很简单，一句话搞定）：
+var to_odds = arr => arr.filter(x => x % 2 == 1)
+当然，如果不使用lambda表达式，就是这样写的：
+var to_odds = function(arr) { return arr.filter(x => x % 2 == 1); }
+实际上，可以更简单，不需要函数都可以：
+[1,1,2,3,4].filter(x => x % 2 == 1)
+
+
+
+
+js中的映射（非常有用，使用率非常普遍，比上面更有用）：
+映射就是数据转化
+映射传统的办法（不推荐，很复杂）：
+var square = function(arr) { 
+    var result = []; 
+    for (var i = 0; i < arr.length; ++i) 
+        result.push(arr[i] * arr[i]); 
+    return result; 
+}
+square([1,2,3,4,5]);
+
+ES2015的方法（推荐，很简单，一句话搞定）：
+var square = function(arr) { return arr.map(x => x*x); }
+或者用：
+var square = arr => arr.map(x => x*x);
+或者更简单：
+arr.map(x => x*x);
+
+另一个例子：
+有个比较复杂的数组：
+var arr = [{id: 1, name: 'one'}, {id: 2, name: 'two'}, {id: 3, name: 'three'}]
+想把里面的id取出来：
+arr.map(x => x.id);
+想把里面的name取出来：
+arr.map(x => x.name);
+想取出id>=2的所有name
+arr.filter(x => x.id >= 2).map(x => x.name)
