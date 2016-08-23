@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+<canvas  id ="myCanvas" width="400" height="600" style="background-color:#efefef"/>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var snake = [];
+    var food = [];
+    var x = 20, y = 0;
+    var len = 3;
+    var der;
+    var moving = false;
+
+    init();
+    creatFood();
+    function init(i) {
+        for (var i = 0; i < len; i++) {
+            snake[i] = { x: i * 10, y: 0 };
+            ctx.fillStyle = "#000";
+            ctx.fillRect(snake[i].x, snake[i].y,10,10);
+        }
+    }
+
+    document.body.addEventListener("keydown", function (e) {
+        if (moving) {
+            return;
+        }
+        switch (e.keyCode) {
+            case 37:
+                if (der != "right") {
+                    der = "left";
+                }
+                break;
+            case 38:
+                if (der != "down") {
+                    der = "up";
+                }
+                break;
+            case 39:
+                if (der != "left") {
+                    der = "right";
+                }
+                //moveto();
+                break;
+            case 40:
+                if (der != "up") {
+                    der = "down"
+                }
+                break;
+
+        }
+        moving = true;
+    });
+
+    function moveTo() {
+        switch (der) {
+            case "left":
+                x = x - 10;
+                break;
+            case "up":
+                y = y - 10;
+                break;
+            case "right":
+                x = x + 10;
+                break;
+            case "down":
+                y = y + 10;
+                break;
+            default:
+                return false;
+        }
+
+        if (x < 0 || x > 390 || y < 0 || y > 590) {
+            clearInterval(startMove);
+            alert("Game Over");
+            return false;
+        }
+        for (var i = 0; i < len-1; i++) {
+            if (snake[len-1].x == snake[i].x && snake[len-1].y == snake[i].y) {
+                clearInterval(startMove);
+                alert("Game Over");
+                return false;
+            }
+        }
+        if (Math.abs(x - food[0].x) < 10 && Math.abs(y - food[0].y) < 10) {
+            if (der === "up") {
+                snake[len] = { x: x, y: snake[len-1]-10 };
+            }
+            if (der === "down") {
+                snake[len] = { x: x, y: snake[len - 1] + 10 };
+            }
+            if (der === "left") {
+                snake[len] = { x: snake[len-1] -10, y:y };
+            }
+            if (der === "right") {
+                snake[len] = { x: snake[len - 1] + 10, y: y };
+            }
+            len = len + 1;
+            creatFood(1);
+        }
+
+        snakeMove(x, y);
+        moving = false;
+    }
+    function creatFood(i) {
+        if (i) {
+            ctx.clearRect(food[0].x, food[0].y, 10, 10);
+        }
+        food[0] = { x: parseInt(Math.random() * 39)*10, y: parseInt(Math.random() * 59)*10 };
+        for (var i = 0 ; i < len; i++) {
+            if (food[0].x == snake[i].x && food[0].y == snake[i].y) {
+                creatFood(i);
+            }
+        }
+        ctx.fillStyle = "red";
+        ctx.fillRect(food[0].x, food[0].y, 10, 10);
+    }
+
+    function snakeMove(newX, newY) {
+        for (var i = 0; i < len; i++) {
+            ctx.clearRect(snake[i].x, snake[i].y, 10, 10);
+        }
+        for (var i = 0; i < len-1; i++) {
+            snake[i].x = snake[i + 1].x;
+            snake[i].y = snake[i + 1].y;
+            ctx.fillStyle = "#000";
+            ctx.fillRect(snake[i].x, snake[i].y,10,10);
+        }
+        snake[len-1].x = newX;
+        snake[len-1].y = newY;
+        ctx.fillRect(newX,newY ,10,10);
+    }
+
+    var startMove = setInterval(moveTo, 150);
+
+</script>
+</body>
+</html>
