@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background-color: #efefef"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var circles = [];
+    var startAngle = 0;
+    var colors = [];
+    function createCircles(num) {
+        for (var i = 0; i < num; i++) {
+            colors.push('#' + (Math.floor(Math.random() * 0xAAAAAA) + 0x555555).toString(16));
+            ctx.save();
+            ctx.beginPath();
+            ctx.arc(300, 300, (30+i * 10), startAngle+i, (startAngle+i)+Math.PI * 0.5, true, false);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = colors[i];
+            ctx.stroke();
+            ctx.restore();
+            startAngle += 0.007;
+        }
+    }
+    requestAnimationFrame(demo= function(){
+        ctx.save();
+        ctx.fillStyle = "#efefef";
+        ctx.fillRect(0,0,600,600);
+        ctx.restore();
+        createCircles(10);
+        requestAnimationFrame(demo);
+    })
+</script>
+</body>
+</html>
