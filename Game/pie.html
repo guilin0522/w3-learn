@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="800" height="800" style="background-color: #efefef"></canvas>
+<script type="text/javascript">
+    var color = ["#27255F", "#2F368F", "#3666B0", "#2CA8E0", "#77D1F6"];
+    var data = [5, 30, 15, 30, 20];
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    function drawCircle() {
+        var startPoint = 0;
+        for (var i = 0; i < data.length; i++) {
+            ctx.fillStyle = color[i];
+            ctx.beginPath();
+            ctx.moveTo(400,400);
+            ctx.arc(400,400,100,startPoint,startPoint + Math.PI*2*(data[i]/100),false);
+            ctx.fill();
+            startPoint += Math.PI*2*(data[i]/100);
+        }
+    }
+    drawCircle();
+
+
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.arc(100, 100, 30, 0, Math.PI * 0.5, true, true);
+    ctx.closePath();
+    ctx.fillStyle = "red";
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "blue";
+    ctx.stroke();
+</script>
+</body>
+</html>
