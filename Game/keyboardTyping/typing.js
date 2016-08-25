@@ -132,5 +132,4 @@ document.body.addEventListener("keydown", function (e) {
         alert("恭喜，已完成");
         statusCountTime = !statusCountTime;
     }
-
 });
