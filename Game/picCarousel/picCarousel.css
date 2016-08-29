@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+.ban {
+    width: 500px;
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    margin: 40px auto 0 auto;
+}
+
+.ban2 {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ban2 ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ban2 ul li {
+    width: 500px;
+    height: 500px;
+}
+
+.ban2 ul li img{
+    width: 500px;
+    height: 500px;
+}
+
+.prev {
+    float: left;
+    cursor: pointer;
+}
+
+.num {
+    height: 82px;
+    overflow: hidden;
+    width: 430px;
+    position: relative;
+    float: left;
+}
+
+.min_pic {
+    padding-top: 10px;
+    width: 500px;
+}
+
+.num ul {
+    position: absolute;
+    width:435px;
+    left: 0;
+    top: 0;
+}
+
+.num ul li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+    padding: 1px;
+}
+
+.num ul li.on {
+    border: 1px solid red;
+    padding: 0;
+}
+
+.num ul li img {
+    width:80px;
+    height: 80px;
+}
+
+.prev_btn1 {
+    width: 16px;
+    text-align: center;
+    height: 18px;
+    margin-top: 40px;
+    margin-right: 20px;
+    cursor: pointer;
+    float: left;
+}
+
+.next_btn1 {
+    width: 16px;
+    text-align: center;
+    height: 18px;
+    margin-top: 40px;
+    cursor: pointer;
+    float: right;
+}
+
+.prev1 {
+    position: absolute;
+    top: 220px;
+    left: 20px;
+    width: 28px;
+    height: 51px;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.next1 {
+    position: absolute;
+    top: 220px;
+    right: 20px;
+    width: 28px;
+    height: 51px;
+    z-index: 9;
+    cursor: pointer;
+}
