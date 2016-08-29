@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="picCarousel.css">
+    <script src="jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+<div class="ban" id="demo1">
+    <div class="ban2" id="ban_pic1">
+        <div class="prev1" id="prev1"><img src="images/index_tab_l.png" width="28" height="51"  alt=""></div>
+        <div class="next1" id="next1"><img src="images/index_tab_r.png" width="28" height="51"  alt=""></div>
+        <ul>
+            <!--<li><a href="javascript:;"><img src="images/b1.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b2.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b3.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b4.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b5.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b1.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b2.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b3.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b4.jpg" alt=""></a></li>-->
+            <!--<li><a href="javascript:;"><img src="images/b5.jpg" alt=""></a></li>-->
+        </ul>
+    </div>
+    <div class="min_pic">
+        <div class="prev_btn1" id="prev_btn1"><img src="images/feel3.png" width="9" height="18"  alt=""></div>
+        <div class="num clearfix" id="ban_num1">
+            <ul>
+                <!--<li><a href="javascript:;"><img src="images/s1.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s2.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s3.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s4.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s5.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s1.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s2.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s3.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s4.jpg" alt=""></a></li>-->
+                <!--<li><a href="javascript:;"><img src="images/s5.jpg" alt=""></a></li>-->
+            </ul>
+        </div>
+        <div class="next_btn1" id="next_btn1"><img src="images/feel4.png" width="9" height="18"  alt=""></div>
+    </div>
+</div>
+<script src="picCarousel.js"></script>
+<script>
+    var pictureRender = new picCarousel({
+        bPic :'.ban2 ul',
+        sPic:'.num ul',
+        bPicData:["images/b1.jpg","images/b2.jpg","images/b3.jpg","images/b4.jpg","images/b5.jpg",
+                 "images/b1.jpg","images/b2.jpg","images/b3.jpg","images/b4.jpg","images/b5.jpg"],
+        sPicData:["images/s1.jpg","images/s2.jpg","images/s3.jpg","images/s4.jpg","images/s5.jpg",
+            "images/s1.jpg","images/s2.jpg","images/s3.jpg","images/s4.jpg","images/s5.jpg"]
+
+    })
+</script>
+</body>
+</html>
