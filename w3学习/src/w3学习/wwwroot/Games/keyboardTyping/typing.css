@@ -1,0 +1,94 @@
+*{padding:0;margin:0; list-style:none;}
+body{background-color:#8DE2F0;padding-top:150px;}
+input{border:none; outline:none;}
+.showCont{
+    width:800px;
+    height:80px;
+    border:1px solid #fff;
+    margin:20px auto;
+    position:relative;
+    overflow:hidden;
+}
+.showCont ul{
+    height:80px;
+    top:0;
+    position:absolute;
+}
+.showCont ul li{
+    float:left;
+    width:80px;
+    height:80px;
+    line-height:80px;
+    text-align:center;
+    color:#fff;
+    font-size:30px;
+    font-family: "Arial";
+}
+.showCont > ul > li:nth-child(5) {
+    color: yellow;
+}
+.line{
+    height:80px;
+    width:80px;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    position:absolute;
+    top:0;
+    left:320px;
+}
+.funCont{
+    width:800px;
+    height:30px;
+    margin:0 auto;
+    color:#fff;
+    font:16px "微软雅黑";
+    line-height:30px;
+}
+.funCont a,.funCont label{
+    float:right;
+    margin-right:10px;
+}
+.funCont input[type='text']{
+    width:50px;
+    line-height:30px;
+    height:30px;
+    border-radius:3px;
+    color:#666;
+    font-size:20px;
+    text-align:center;
+    border-bottom:2px solid #6eaeb9;
+}
+.funCont a:hover{
+    color:#6eaeb9;
+}
+.keyCont{
+    width:750px;
+    height:282px;
+    margin:20px auto;
+    border:1px solid #fff;
+    padding-left:50px;
+    padding-top:68px;
+}
+.keyCont p{
+    display:block;
+    width:100%;
+    clear:both;
+}
+.keyCont p a{
+    display:block;
+    float:left;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    text-align:center;
+    background-color:#fff;
+    color:#8DE2F0;
+    font-size:20px;
+    margin:3px 2px;
+    border-radius:4px;
+    font-weight:bold;
+    border-bottom:2px solid #6eaeb9;
+}
+.pdl2{padding-left:20px;}
+.pdl4{padding-left:40px;}
+.pdl6{padding-left:60px;}

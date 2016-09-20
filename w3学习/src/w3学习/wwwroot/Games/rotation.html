@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600" style="background-color: #efefef"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    var circles = [];
+    var startAngle = 0;
+    var colors = [];
+    function createCircles(num) {
+        colors.push('#' + (Math.floor(Math.random() * 0xAAAAAA) + 0x555555).toString(16));
+        for (var i = 0; i < num; i++) {
+            ctx.beginPath();
+            ctx.arc(80*(i + 1), 300, 30, startAngle+i, (startAngle+i)+Math.PI * 0.5, true);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = colors[i];
+            ctx.stroke();
+            startAngle += 0.007;
+        }
+    }
+    var angle = 0;
+    function translateCircles(num){
+        colors.push('#' + (Math.floor(Math.random() * 0xAAAAAA) + 0x555555).toString(16));
+        for(var i = 1; i <= num ;i++){
+            ctx.beginPath();
+            ctx.save();
+            ctx.translate(80*i,300);
+            ctx.rotate(startAngle+i);
+            ctx.arc(0,0,30,0,Math.PI * 0.5,true);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = colors[i];
+            ctx.stroke();
+            ctx.restore();
+            startAngle += 0.007;
+
+            ctx.save();
+            ctx.translate(80*i,100);
+            ctx.rotate(angle);
+            ctx.fillStyle = "red";
+            ctx.fillRect(0,0,20,20);
+            ctx.fillRect(-19,0,20,20);
+            ctx.fillRect(0,-19,20,20);
+            ctx.fillRect(-19,-19,20,20);
+            ctx.restore();
+            angle += 55;
+
+        }
+    }
+
+    requestAnimationFrame(demo= function(){
+        ctx.fillStyle = "#efefef";
+        ctx.clearRect(0,0,600,600);
+        translateCircles(5);
+        requestAnimationFrame(demo);
+    })
+</script>
+</body>
+</html>

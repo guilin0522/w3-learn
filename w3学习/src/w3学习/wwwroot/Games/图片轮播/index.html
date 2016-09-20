@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="picCarousel.css">
+    <script src="jquery-3.1.0.min.js"></script>
+</head>
+<body>
+
+<div class="ban" id="demo1">
+    <div class="ban2" id="ban_pic1">
+        <div class="prev1" id="prev1"><img src="images/index_tab_l.png" width="28" height="51" alt=""></div>
+        <div class="next1" id="next1"><img src="images/index_tab_r.png" width="28" height="51" alt=""></div>
+        <ul>
+            <li><a href="javascript:;"><img src="images/b1.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b2.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b3.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b4.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b5.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b1.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b2.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b3.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b4.jpg" width="500" height="500" alt=""></a></li>
+            <li><a href="javascript:;"><img src="images/b5.jpg" width="500" height="500" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="min_pic">
+        <div class="prev_btn1" id="prev_btn1"><img src="images/feel3.png" width="9" height="18" alt=""></div>
+        <div class="num clearfix" id="ban_num1">
+            <ul>
+                <li><a href="javascript:;"><img src="images/s1.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s2.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s3.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s4.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s5.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s1.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s2.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s3.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s4.jpg" width="80" height="80" alt=""></a></li>
+                <li><a href="javascript:;"><img src="images/s5.jpg" width="80" height="80" alt=""></a></li>
+            </ul>
+        </div>
+        <div class="next_btn1" id="next_btn1"><img src="images/feel4.png" width="9" height="18" alt=""></div>
+    </div>
+</div>
+<script src="picCarousel.js"></script>
+<script type="text/javascript">
+    jq('#demo1').banqh({
+        box: "#demo1",//总框架
+        pic: "#ban_pic1",//大图框架
+        pnum: "#ban_num1",//小图框架
+        prev_btn: "#prev_btn1",//小图左箭头
+        next_btn: "#next_btn1",//小图右箭头
+        prev: "#prev1",//大图左箭头
+        next: "#next1",//大图右箭头
+        mhc: ".mhc",//朦灰层
+        autoplay: true,//是否自动播放
+        interTime: 5000,//图片自动切换间隔
+        delayTime: 400,//切换一张图片时间
+        order: 0,//当前显示的图片（从0开始）
+        picdire: true,//大图滚动方向（true为水平方向滚动）
+        mindire: true,//小图滚动方向（true为水平方向滚动）
+        min_picnum: 5,//小图显示数量
+    })
+</script>
+</body>
+</html>
