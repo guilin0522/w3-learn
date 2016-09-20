@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>避免浏览器使用缓存加载页面</title>
+    <script type="text/javascript">
+        function myonload() {
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                var link = links[i];
+                var href = links.href;
+                if (href.indexOf('?') > -1) {
+                    href += '&time=' + new Date().getTime();
+                } else {
+                    href += '?time=' + new Date().getTime();
+                }
+                link.href = href;
+            }
+        }
+        window.onload = myonload;
+
+    </script>
+</head>
+<body>
+    <p>
+        <a href="1.html">链接一</a>
+        <a href="2.html">链接二</a>
+    </p>
+</body>
+</html>

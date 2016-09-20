@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>iframe自适应高度</title>
+    <script type="text/javascript">
+        function resizeIframe() {
+            var myframe = document.getElementById("myframe");
+            try{
+                var bodyHeight=myframe.contentWindow.document.body.scrollHeight;
+                var scrollHeight=myframe.contentWindow.document.documentElement.scrollHeight;
+                var myHeight=Math.max(bodyHeight,scrollHeight);
+                myframe.height=myHeight;
+            }catch(ex){}
+        }
+        window.setInterval("resizeIframe()", 200);
+    </script>
+</head>
+<body style="text-align:center">
+    <iframe id="myframe" src="53_iframe.html"
+            scrolling="no" frameborder="0" onload="this.height=100"
+            style="border:1px solid black;"></iframe>
+</body>
+</html>

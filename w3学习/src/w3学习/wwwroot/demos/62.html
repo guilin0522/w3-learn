@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>改变按钮的颜色</title>
+    <script type="text/javascript">
+        function defineBtn() {
+            var myBtn = document.getElementsByName('myBtn');
+            for (var i = 0; i < myBtn.length; i++) {
+                myBtn[i].onmouseover = function () {
+                    this.style.background = 'red';
+                }
+            }
+            for (var i = 0; i < myBtn.length; i++) {
+                myBtn[i].onmouseout = function () {
+                    this.style.background = '';
+                }
+            }
+        }
+        function submitForm(btn) {
+            var btnId = btn.in;
+            var f = document.forms[0];
+            if (btnId == 'myBtn1') {
+                window.open = '1.html';
+            } else if (btnId == 'myBtn2') {
+                window.open = '2.html';
+            }
+            else if (btnId == 'myBtn3') {
+                window.open = '3.html';
+            } else if (btnId == 'myBtn4') {
+                window.open = '4.html';
+            }
+            f.submit();
+        }
+    </script>
+</head>
+<body onload="defineBtn()" style="text-align:center">
+    <form action="" method="post" style="display:block; width:200px;height:200px;border:1px solid black;">
+        <br /><br /><br /><br />
+        <input name="myBtn" type="button" value="按钮一" id="myBtn1"  onclick="submitForm(this)"/>
+        <br />
+        <input name="myBtn" type="button" value="按钮二" id="myBtn2" onclick="submitForm(this)" />
+        <br />
+        <input name="myBtn" type="button" value="按钮三" id="myBtn3" onclick="submitForm(this)" />
+        <br />
+        <input name="myBtn" type="button" value="按钮四" id="myBtn4" onclick="submitForm(this)" />
+    </form>
+    
+</body>
+</html>

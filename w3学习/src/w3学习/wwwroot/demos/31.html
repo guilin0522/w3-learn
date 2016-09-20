@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>倒序排列</title>
+    <script type="text/javascript">
+        function deletechilds() {
+            var ul = document.getElementsByTagName("ul")[0];
+           // if (ul.hasChildNodes()) {
+               // var len = ul.childNodes.length;
+                //var arr = [];
+             // for (var i = 0; i < len; i++) {
+                    //arr[i] = ul.childNodes[0];
+                    
+                    // 周杰注：
+                    // 在HTML中，节点（Node）分为很多种：其中包括文本、注释、元素，和其它等等
+                    // 像你的这个例子中，就包含了两种类型的节点：文本和元素
+                    // <ul>
+                    //  <li>item1</li>
+                    //  <li>item2</li>
+                    //  <li>item3</li>
+                    //  <li>item4</li>
+                    // </ul>
+                    // 看到<ul>到第一个<li>了吗？它并不是连起来的，它中间还隔了几个空格、一个换行，它些字符，它们就组成了一个文本节点
+                    // 所以，ul的第一个子节点，应该是一个文本节点，它包含了一个换行符和几个空格
+                    // 因此，ul的第二个子节点，才是一个元素，所以，你要点两下，才能删掉那个<li>
+                    // 
+                    // 在HTML5里面，提供了一个文件又快捷的方法，可以快速找到第一个元素节点：.firstElementChild
+                    // 因此，将下面这句话改为：
+                     ul.removeChild(ul.firstElementChild);
+                    // 就可以了。
+                   // ul.removeChild(ul.childNodes[0]);
+                }
+                  /* for (var i = len - 1; i >= 0; i--) {
+                        ul.appendChild(arr[i]);
+                    }*/
+                
+           // }
+       // }
+    </script>
+</head>
+<body style="text-align:center">
+        <input type="button" value="倒序排列" onclick="deletechilds();" />
+        <br />
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+        </ul>
+    
+</body>
+</html>

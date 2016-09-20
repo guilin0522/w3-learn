@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>当鼠标左键按下弹出广告窗口</title>
+    <script type="text/javascript">
+        function defineClick() {
+            document.onclick = function () {
+                window.open("54_ad.html",'','fullscreen=1');
+            }
+        }
+    </script>
+</head>
+<body onload="defineClick();">
+    <p align="center">单击屏幕任意位置</p>
+</body>
+</html>

@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>修改网址</title>
+    <script type="text/javascript">
+        function changeURL() {
+            var newURL = document.getElementById('newURL').value;
+            self.location.href = newURL;
+        }
+    </script>
+</head>
+<body style="text-align:center">
+    <input type="text" name="newURL" value="" id="newURl" />
+    <input type="button" value="跳转地址" onclick="changeURL();" />
+</body>
+</html>

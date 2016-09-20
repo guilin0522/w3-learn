@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title >根据标签名获取Doma</title>
+    <script type="text/javascript">
+    function getDomsByTag(){
+    var doms = document.getElementsByTagName("span");
+    var str = "";
+
+    for (var i=0; i < doms.length; i++){
+     str += doms[i].innerHTML;
+     str += ",";
+       }
+      alert("两个DOM的文本是：" + str);
+    }
+    </script>
+</head>
+<body style="text-align:center">
+    <p>
+        <span name="myname">文字一</span>
+        <span>文字二</span>
+        <br />
+        <input type="button" value="获取" onclick="getDomsByTag();" />
+    </p>
+</body>
+</html>
